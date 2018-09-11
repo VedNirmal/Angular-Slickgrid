@@ -163,11 +163,17 @@
 // Checkbox Selector Plugin
 // ----------------------------------------------
 
+.slick-headerrow-column > #filter-checkbox-selectall-container > input[type=checkbox] + label {
+  margin-left: 4px;
+  margin-top: 3px;
+}
 .slick-column-name > input[type=checkbox],
+.slick-headerrow-column > #filter-checkbox-selectall-container > input[type=checkbox],
 .slick-cell-checkboxsel > input[type=checkbox] {
   display:none;  /* to hide the checkbox itself */
 }
 .slick-column-name > input[type=checkbox] + label:before,
+.slick-headerrow-column > #filter-checkbox-selectall-container > input[type=checkbox] + label:before,
 .slick-cell-checkboxsel > input[type=checkbox] + label:before {
   font-family: $icon-font-family;
   color: $chekbox-selector-color;
@@ -178,10 +184,16 @@
   cursor: pointer;
 }
 .slick-column-name > input[type=checkbox] + label:before,
+.slick-headerrow-column > #filter-checkbox-selectall-container > input[type=checkbox] + label:before {
+  color: $chekbox-select-all-color;
+}
+.slick-column-name > input[type=checkbox] + label:before,
+.slick-headerrow-column > #filter-checkbox-selectall-container > input[type=checkbox] + label:before,
 .slick-cell-checkboxsel > input[type=checkbox] + label:before {
   opacity: $chekbox-selector-opacity; /* unchecked icon */
 }
 .slick-column-name > input[type=checkbox]:checked + label:before,
+.slick-headerrow-column > #filter-checkbox-selectall-container > input[type=checkbox]:checked + label:before,
 .slick-cell-checkboxsel > input[type=checkbox]:checked + label:before {
   opacity: 1; /* checked icon */
 }

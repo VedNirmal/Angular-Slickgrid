@@ -8,6 +8,12 @@ export interface CheckboxSelector {
   /** default to false, do we want to hide the "Select All" checkbox? */
   hideSelectAllCheckbox?: boolean;
 
+  /** defaults to true, do we want to show the "Select All" inside the Column Header Title Row? */
+  showInColumnTitleRow?: boolean;
+
+  /** defaults to false, do we want to show the "Select All" inside the Column Header Filter Row? */
+  showInFilterHeaderRow?: boolean;
+
   /** Defaults to "Select/Deselect All", provide a tooltip that will be shown over the "Select All" checkbox */
   toolTip?: string;
 

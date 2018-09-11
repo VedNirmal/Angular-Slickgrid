@@ -142,6 +142,7 @@ $grid-menu-icon-font-size:                14px !default;
 
 /* Checkbox Selector / Row Selection */
 $chekbox-selector-color:                  $primary-color !default;
+$chekbox-select-all-color:                darken($primary-color, 5%) !default;
 $chekbox-selector-size:                   13px !default;
 $chekbox-selector-icon:                   "\f00c" !default;
 $chekbox-selector-opacity:                0.15 !default;

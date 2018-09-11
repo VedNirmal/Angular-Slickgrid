@@ -53,13 +53,14 @@ export class GridRowSelectionComponent implements OnInit {
       { id: 'effort-driven', name: 'Effort Driven', field: 'effortDriven', formatter: Formatters.checkmark, type: FieldType.number, sortable: true }
     ];
     this.columnDefinitions2 = [
-      { id: 'title', name: 'Title', field: 'title', sortable: true, type: FieldType.string },
-      { id: 'duration', name: 'Duration (days)', field: 'duration', sortable: true, type: FieldType.number },
-      { id: 'complete', name: '% Complete', field: 'percentComplete', formatter: Formatters.percentCompleteBar, type: FieldType.number, sortable: true },
-      { id: 'start', name: 'Start', field: 'start', formatter: Formatters.dateIso, sortable: true, type: FieldType.dateIso, exportWithFormatter: true  },
-      { id: 'finish', name: 'Finish', field: 'finish', formatter: Formatters.dateIso, sortable: true, type: FieldType.date, exportWithFormatter: true },
-      { id: 'effort-driven', name: 'Effort Driven', field: 'effortDriven', formatter: Formatters.checkmark, type: FieldType.number, sortable: true }
+      { id: 'title', name: 'Title', field: 'title', sortable: true, type: FieldType.string, filterable: true },
+      { id: 'duration', name: 'Duration (days)', field: 'duration', sortable: true, type: FieldType.number, filterable: true },
+      { id: 'complete', name: '% Complete', field: 'percentComplete', formatter: Formatters.percentCompleteBar, type: FieldType.number, sortable: true, filterable: true },
+      { id: 'start', name: 'Start', field: 'start', formatter: Formatters.dateIso, sortable: true, type: FieldType.dateIso, exportWithFormatter: true, filterable: true  },
+      { id: 'finish', name: 'Finish', field: 'finish', formatter: Formatters.dateIso, sortable: true, type: FieldType.date, exportWithFormatter: true, filterable: true },
+      { id: 'effort-driven', name: 'Effort Driven', field: 'effortDriven', formatter: Formatters.checkmark, type: FieldType.number, sortable: true, filterable: true }
     ];
+
     this.gridOptions1 = {
       editable: true,
       autoEdit: true,
@@ -76,6 +77,7 @@ export class GridRowSelectionComponent implements OnInit {
       },
       enableRowSelection: true
     };
+
     this.gridOptions2 = {
       enableAutoResize: false,
       enableCellNavigation: true,
@@ -83,9 +85,14 @@ export class GridRowSelectionComponent implements OnInit {
         // True (Single Selection), False (Multiple Selections)
         selectActiveRow: false
       },
+      checkboxSelector: {
+        showInColumnTitleRow: false,
+        showInFilterHeaderRow: true
+      },
       preselectedRows: [0, 2],
       enableCheckboxSelector: true,
       enableRowSelection: true,
+      enableFiltering: true
     };
 
     this.dataset1 = this.prepareData();
